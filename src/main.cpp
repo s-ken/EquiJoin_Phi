@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #include "sort_merge_join.h"
+#include "hash_join.h"
 #include "Timer.h"
 
 int main( int argc, char* argv[] )
@@ -43,6 +44,7 @@ int main( int argc, char* argv[] )
 
         timer.start();
         size_t n = sort_merge_join( res_R, res_S, key_R, id_R, len_R, key_S, id_S, len_S );
+        //size_t n = hash_join( res_R, res_S, key_R, id_R, len_R, key_S, id_S, len_S );
         timer.stop();
 
         free(res_R);
